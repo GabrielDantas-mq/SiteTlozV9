@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A beleza de "The Legend of Zelda: Breath of the Wild"</title>
+    <link rel="icon" type="image/png" href="../imagens/TriforceLogoV2.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../js/plugins/bxslider.css">   
+    <script src="../js/plugins/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="../js/plugins/magnific-popup.js"></script>
+</head>
+
+<body id="pag-regioes">
+    <main> 
+        <header id="headerLogo">
+            <div id="header_width"> 
+            <a href="../index.html"><img src="../imagens/AlmostWhiteBotwLogo.png" alt="LogoBotw"></a>
+        <nav id="menu-paginas" class="ativo">
+            <ul>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="https://www.nintendo.com/pt-br/store/products/the-legend-of-zelda-breath-of-the-wild-switch/" target="_blank">Site Oficial</a></li>
+                <li><a href="sobremim.html">Sobre Mim</a></li>
+            </ul>
+        </nav>
+            </div>
+        </header>
+
+        <div class="container_regioes">
+            <div class="container_imagens_regioes">
+                <div class="imagens_regioes"><img src="../imagens/regioesp/HebraRegionP.png" alt="Hebra"></div>
+                <div class="imagens_regioes"><img src="../imagens/regioesp/EldinRegionP.png" alt="Eldin"></div>
+                <div class="imagens_regioes"><img src="../imagens/regioesp/GerudoRegionP.png" alt="Gerudo"></div>
+                <div class="imagens_regioes"><img src="../imagens/regioesp/LanaryuRegionP.png" alt="Lanaryu"></div>
+            </div>
+        </div>
+
+        <div class="popup_regioes" id="popup">
+            <span id="closePopup">&times;</span>
+            <img src="../imagens/regioesp/HebraRegionP.png" alt="HebraMaior" id="popupImage">
+        </div>
+
+    </main>
+
+    <footer>       
+        <p>Este site foi desenvolvido pelo aluno Gabriel Dantas Magalhães de Queiroz durante os seus estudos no primeiro período da disciplina "Introdução a tecnologia WEB"
+            <br>Paulo Afonso - Bahia - Brasil     
+        </p>
+    </footer>
+
+<script>
+      const popup = document.getElementById("popup");
+      const popupImg = document.getElementById("popupImage");
+      const closeBtn = document.getElementById("closePopup");
+      const imagens = document.querySelectorAll(".imagens_regioes img");
+
+      imagens.forEach(img => {
+        img.addEventListener("click", () => {
+            popupImg.src = img.src;
+            popup.classList.add("active");
+         });
+      });
+
+      closeBtn.addEventListener("click", () => {
+          popup.classList.remove("active");
+          popupImg.src = ""; 
+        });
+
+      popup.addEventListener("click", (e) => {
+          if (e.target === popup) {
+            popup.classList.remove("active");
+            popupImg.src = "";
+          }
+        });
+</script>
+
+</body>
+</html>
